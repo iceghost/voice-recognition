@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
- <title>Annyang</title>
- <script src="annyang.min.js"></script>
- <script src="jquery.js"></script>
- <script src="/socket.io/socket.io.js"></script>
- <script src="main.js"></script>  
-    
-  </head>
-  <body>
-    <h1>Nói để điều khiển</h1>
-  </body>
+    <title>Trang chủ</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="annyang.min.js"></script>
+    <script>
+        if (annyang) {
+            // Let's define a command.
+            var commands = {
+                'Dâu tây': function () {
+                    socket.emit("xin chao");
+                    alert('Tôi giúp được gì?');
+                },
+                'tạm biệt': function () { alert('See you later!'); },
+                'Dâu tây tắt đèn': function () { alert('Tắt đèn!'); },
+            };
+            // This should be true
+            console.log(annyang.isListening());
+            // Add our commands to annyang
+            annyang.debug();
+            annyang.addCommands(commands);
+            
+            // Start listening.
+            annyang.start();
+            annyang.addCallback('soundstart', function () {
+                console.log('sound detected');
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Nói đi...</h1>
+</body>
+
 </html>

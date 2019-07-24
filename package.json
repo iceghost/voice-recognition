@@ -6,15 +6,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iceghosttth/voice-recognition.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iceghosttth/voice-recognition/issues"
+  },
+  "homepage": "https://github.com/iceghosttth/voice-recognition#readme",
   "dependencies": {
-    "@google-cloud/speech": "^3.0.0",
-    "ejs": "^2.6.1",
-    "express": "^4.17.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
     "ip": "^1.1.5",
-    "socket.io": "^2.2.0",
-    "socketio": "^1.0.0",
-    "speech-to-text": "^2.9.1"
+    "socket.io": "^2.2.0"
   }
 }
